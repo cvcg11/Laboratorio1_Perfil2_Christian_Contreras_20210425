@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.Stack;
 
 
 public class Main {
@@ -28,12 +29,21 @@ public class Main {
 
                 switch (opcion) {
                     case 1:
-                        
+                        System.out.println("Introduzca nombre del producto:");
+                        String nombre = scanner.nextLine();
+                        System.out.println("Introduzca el precio del prducto:");
+                        int Precio = scanner.nextInt();
+                        Productos nuevo = new Productos();
+                        base.add(nuevo);
+
+    
                         break;
                     case 2:
 
-                        System.out.println("Los elementos de la lista son:");
-                        System.out.println(base);
+                        System.out.println("Lista de productos");
+                        for(Productos elemneto : base){
+                            System.out.println(elemneto);
+                        }
                         break;
 
                     case 3:
@@ -60,4 +70,6 @@ public class Main {
 
 
     }
+
+    public static NuevosProductos()
 }
