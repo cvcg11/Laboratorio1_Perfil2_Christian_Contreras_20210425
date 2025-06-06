@@ -6,6 +6,7 @@ import java.util.Stack;
 
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         LinkedList<Productos> base = new LinkedList<>();
@@ -17,6 +18,7 @@ public class Main {
 
         try {
             int cd = 0;
+
             do {
                 System.out.print(" -- BIENVENIDO --");
                 System.out.println("\n Escoja una de la opciones");
@@ -33,15 +35,14 @@ public class Main {
                         String nombre = scanner.nextLine();
                         System.out.println("Introduzca el precio del prducto:");
                         int Precio = scanner.nextInt();
-                        Productos nuevo = new Productos();
+                        Productos nuevo = new Productos(id, nombre, Precio);
                         base.add(nuevo);
 
-    
                         break;
                     case 2:
 
                         System.out.println("Lista de productos");
-                        for(Productos elemneto : base){
+                        for (Productos elemneto : base) {
                             System.out.println(elemneto);
                         }
                         break;
@@ -61,7 +62,8 @@ public class Main {
 
 
             }
-            while (cd == 5);{
+            while (cd == 5);
+            {
                 System.out.println();
             }
         } catch (Exception e) {
@@ -71,5 +73,8 @@ public class Main {
 
     }
 
-    public static NuevosProductos()
+
+
+
+
 }

@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.UUID;
+
 public class Productos {
     int id;
     String Nombre;
@@ -10,6 +12,7 @@ public class Productos {
         Nombre = nombre;
         Precio = precio;
     }
+    
 
     @Override
     public String toString() {
