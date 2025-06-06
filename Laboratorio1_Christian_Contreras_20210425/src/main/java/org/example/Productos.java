@@ -1,7 +1,7 @@
 package org.example;
 
 public class Productos {
-    int id
+    int id;
     String Nombre;
     Double Precion;
 
@@ -9,17 +9,5 @@ public class Productos {
         this.id = id;
         Nombre = nombre;
         Precion = precion;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getNombre() {
-        return Nombre;
-    }
-
-    public Double getPrecion() {
-        return Precion;
     }
 }
