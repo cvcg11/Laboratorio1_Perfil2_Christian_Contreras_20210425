@@ -15,6 +15,7 @@ public class Main {
 
 
         try {
+            int cd = 0;
             do {
                 System.out.print(" -- BIENVENIDO --");
                 System.out.println("\n Escoja una de la opciones");
@@ -27,11 +28,12 @@ public class Main {
 
                 switch (opcion) {
                     case 1:
-                        System.out.println("Hoka");
+                        
                         break;
                     case 2:
 
-                        System.out.println("Hdsoka");
+                        System.out.println("Los elementos de la lista son:");
+                        System.out.println(base);
                         break;
 
                     case 3:
@@ -44,15 +46,13 @@ public class Main {
                         System.out.println("Hoksdsdsda");
                         break;
 
-                    case 5:
-                        break;
                     default:
                 }
 
 
             }
-            while (){
-
+            while (cd == 5);{
+                System.out.println();
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
