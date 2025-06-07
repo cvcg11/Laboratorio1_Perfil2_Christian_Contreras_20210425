@@ -11,63 +11,81 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         LinkedList<Productos> base = new LinkedList<>();
         base.add(new Productos(1, "Pañales", 14.50));
-        base.add(new Productos(1, "Jamon", 14.50));
-        base.add(new Productos(1, "Manzanas", 14.50));
-        base.add(new Productos(1, "Shampoo", 14.50));
-
+        base.add(new Productos(2, "Jamon", 14.50));
+        base.add(new Productos(3, "Manzanas", 14.50));
+        base.add(new Productos(4, "Shampoo", 14.50));
+        int nextId = 5;
 
         try {
-            int cd = 0;
-
+            boolean salir = false;
             do {
                 System.out.print(" -- BIENVENIDO --");
-                System.out.println("\n Escoja una de la opciones");
+                System.out.println("\n Escoja una de las opciones");
                 System.out.println("[1]. Crear un producto");
-                System.out.println("[2]. Ver lista de productos un producto");
+                System.out.println("[2]. Ver lista de productos");
                 System.out.println("[3]. Actualizar un producto");
                 System.out.println("[4]. Eliminar un producto");
+                System.out.println("[5]. Salir");
 
                 int opcion = scanner.nextInt();
+                scanner.nextLine();
 
                 switch (opcion) {
                     case 1:
-                        System.out.println("Introduzca nombre del producto:");
-                        String nombre = scanner.nextLine();
-                        System.out.println("Introduzca el precio del prducto:");
-                        int Precio = scanner.nextInt();
-                        Productos nuevo = new Productos(id, nombre, Precio);
-                        base.add(nuevo);
+                        boolean CrearNuevo = true;
+                        while (CrearNuevo){
+                            System.out.println("Introduzca nombre del producto:");
+                            String nombre = scanner.nextLine();
 
-                        break;
-                    case 2:
+                            System.out.println("Introduzca el precio del producto:");
+                            double precio = scanner.nextDouble();
+                            scanner.nextLine();
 
-                        System.out.println("Lista de productos");
-                        for (Productos elemneto : base) {
-                            System.out.println(elemneto);
+                            Productos nuevo = new Productos(nextId, nombre, precio);
+                            base.add(nuevo);
+                            nextId++;
+
+                            System.out.println("El producto ha sido agregado exitosamente");
+
+                            System.out.println("\n¿Desea crear otro producto? (S/N)");
+                            String respuesta = scanner.nextLine().trim().toUpperCase();
+
+                            if (!respuesta.equals("S")) {
+                                CrearNuevo = false;
+                            }
                         }
                         break;
+                    case 2:
+                        boolean VerLista = true;
+                        while (VerLista){
+                            System.out.println("Lista de productos");
+                            for (Productos elemento : base) {
+                                System.out.println(elemento);
+                            }
+                            System.out.println("\nPresione (N) para salir o cualquier otra tecla");
+                            String respuesta = scanner.nextLine().trim().toUpperCase();
 
+                            if (respuesta.equals("N")) {
+                                VerLista = false;
+                            }
+                        }
+                        break;
                     case 3:
-
-                        System.out.println("Hosdsdka");
+                        System.out.println("Funcionalidad para actualizar");
                         break;
-
                     case 4:
-
-                        System.out.println("Hoksdsdsda");
+                        System.out.println("Funcionalidad para eliminar");
                         break;
-
+                    case 5:
+                        salir = true;
+                        System.out.println("Saliendo del programa...");
+                        break;
                     default:
+                        System.out.println("Opción no válida. Intente de nuevo.");
                 }
-
-
-            }
-            while (cd == 5);
-            {
-                System.out.println();
-            }
+            } while (!salir);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println("Caracter incorrecto");
         }
 
 
